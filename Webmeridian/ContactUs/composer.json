@@ -1,0 +1,22 @@
+{
+    "name": "webmeridian/module-contactus",
+    "description": "",
+    "type": "magento2-module",
+    "license": "OSL-3.0",
+    "authors": [
+        {
+            "name": "Dims Lt",
+            "email": "dims.ltw@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "Webmeridian\\ContactUs\\": ""
+        },
+        "files": [
+            "registration.php"
+        ]
+    }
+}

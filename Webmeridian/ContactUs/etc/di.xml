@@ -1,0 +1,19 @@
+<?xml version="1.0" ?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+	<preference for="Webmeridian\ContactUs\Api\CustomerFeedbackRepositoryInterface" type="Webmeridian\ContactUs\Model\CustomerFeedbackRepository"/>
+	<preference for="Webmeridian\ContactUs\Api\Data\CustomerFeedbackInterface" type="Webmeridian\ContactUs\Model\Data\CustomerFeedback"/>
+	<preference for="Webmeridian\ContactUs\Api\Data\CustomerFeedbackSearchResultsInterface" type="Magento\Framework\Api\SearchResults"/>
+	<virtualType name="Webmeridian\ContactUs\Model\ResourceModel\CustomerFeedback\Grid\Collection" type="Magento\Framework\View\Element\UiComponent\DataProvider\SearchResult">
+		<arguments>
+			<argument name="mainTable" xsi:type="string">webmeridian_contactus_customerfeedback</argument>
+			<argument name="resourceModel" xsi:type="string">Webmeridian\ContactUs\Model\ResourceModel\CustomerFeedback\Collection</argument>
+		</arguments>
+	</virtualType>
+	<type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
+		<arguments>
+			<argument name="collections" xsi:type="array">
+				<item name="webmeridian_contactus_customerfeedback_listing_data_source" xsi:type="string">Webmeridian\ContactUs\Model\ResourceModel\CustomerFeedback\Grid\Collection</item>
+			</argument>
+		</arguments>
+	</type>
+</config>

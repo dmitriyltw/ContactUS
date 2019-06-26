@@ -1,0 +1,15 @@
+<?xml version="1.0" ?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Acl/etc/acl.xsd">
+	<acl>
+		<resources>
+			<resource id="Magento_Backend::admin">
+				<resource id="Webmeridian_ContactUs::CustomerFeedback" sortOrder="10" title="CustomerFeedback">
+					<resource id="Webmeridian_ContactUs::CustomerFeedback_save" sortOrder="10" title="Save CustomerFeedback"/>
+					<resource id="Webmeridian_ContactUs::CustomerFeedback_delete" sortOrder="20" title="Delete CustomerFeedback"/>
+					<resource id="Webmeridian_ContactUs::CustomerFeedback_update" sortOrder="30" title="Update CustomerFeedback"/>
+					<resource id="Webmeridian_ContactUs::CustomerFeedback_view" sortOrder="40" title="View CustomerFeedback"/>
+				</resource>
+			</resource>
+		</resources>
+	</acl>
+</config>

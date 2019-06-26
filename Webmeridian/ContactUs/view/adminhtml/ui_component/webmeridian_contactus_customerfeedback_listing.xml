@@ -1,0 +1,137 @@
+<?xml version="1.0" ?>
+<listing xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Ui:etc/ui_configuration.xsd">
+	<argument name="data" xsi:type="array">
+		<item name="js_config" xsi:type="array">
+			<item name="provider" xsi:type="string">webmeridian_contactus_customerfeedback_listing.webmeridian_contactus_customerfeedback_listing_data_source</item>
+		</item>
+	</argument>
+	<settings>
+		<spinner>webmeridian_contactus_customerfeedback_columns</spinner>
+		<deps>
+			<dep>webmeridian_contactus_customerfeedback_listing.webmeridian_contactus_customerfeedback_listing_data_source</dep>
+		</deps>
+		<buttons>
+			<button name="add">
+				<url path="*/*/new"/>
+				<class>primary</class>
+				<label translate="true">Add new CustomerFeedback</label>
+			</button>
+		</buttons>
+	</settings>
+	<dataSource component="Magento_Ui/js/grid/provider" name="webmeridian_contactus_customerfeedback_listing_data_source">
+		<settings>
+			<updateUrl path="mui/index/render"/>
+		</settings>
+		<aclResource>Webmeridian_ContactUs::CustomerFeedback</aclResource>
+		<dataProvider class="Magento\Framework\View\Element\UiComponent\DataProvider\DataProvider" name="webmeridian_contactus_customerfeedback_listing_data_source">
+			<settings>
+				<requestFieldName>id</requestFieldName>
+				<primaryFieldName>customerfeedback_id</primaryFieldName>
+			</settings>
+		</dataProvider>
+	</dataSource>
+	<listingToolbar name="listing_top">
+		<settings>
+			<sticky>true</sticky>
+		</settings>
+		<bookmark name="bookmarks"/>
+		<columnsControls name="columns_controls"/>
+		<filters name="listing_filters"/>
+		<paging name="listing_paging"/>
+	</listingToolbar>
+	<columns name="webmeridian_contactus_customerfeedback_columns">
+		<settings>
+<!--			<editorConfig>-->
+<!--				<param name="selectProvider" xsi:type="string">webmeridian_contactus_customerfeedback_listing.webmeridian_contactus_customerfeedback_listing.webmeridian_contactus_customerfeedback_columns.ids</param>-->
+<!--				<param name="enabled" xsi:type="boolean">true</param>-->
+<!--				<param name="indexField" xsi:type="string">customerfeedback_id</param>-->
+<!--				<param name="clientConfig" xsi:type="array">-->
+<!--					<item name="saveUrl" path="webmeridian_contactus/CustomerFeedback/inlineEdit" xsi:type="url"/>-->
+<!--					<item name="validateBeforeSave" xsi:type="boolean">false</item>-->
+<!--				</param>-->
+<!--			</editorConfig>-->
+			<childDefaults>
+				<param name="fieldAction" xsi:type="array">
+					<item name="provider" xsi:type="string">webmeridian_contactus_customerfeedback_listing.webmeridian_contactus_customerfeedback_listing.webmeridian_contactus_customerfeedback_columns_editor</item>
+					<item name="target" xsi:type="string">startEdit</item>
+					<item name="params" xsi:type="array">
+						<item name="0" xsi:type="string">${ $.$data.rowIndex }</item>
+						<item name="1" xsi:type="boolean">true</item>
+					</item>
+				</param>
+			</childDefaults>
+		</settings>
+		<selectionsColumn name="ids">
+			<settings>
+				<indexField>customerfeedback_id</indexField>
+			</settings>
+		</selectionsColumn>
+		<column name="customerfeedback_id">
+			<settings>
+				<filter>text</filter>
+				<sorting>asc</sorting>
+				<label translate="true">ID</label>
+			</settings>
+		</column>
+		<actionsColumn class="Webmeridian\ContactUs\Ui\Component\Listing\Column\CustomerFeedbackActions" name="actions">
+			<settings>
+				<indexField>customerfeedback_id</indexField>
+				<resizeEnabled>false</resizeEnabled>
+				<resizeDefaultWidth>107</resizeDefaultWidth>
+			</settings>
+		</actionsColumn>
+		<column name="customer_name">
+			<settings>
+				<filter>text</filter>
+				<label translate="true">Name</label>
+			</settings>
+		</column>
+		<column name="customer_email">
+			<settings>
+				<filter>text</filter>
+				<label translate="true">Email</label>
+			</settings>
+		</column>
+		<column name="customer_phone_number">
+			<settings>
+				<filter>text</filter>
+				<label translate="true">Phone number</label>
+			</settings>
+		</column>
+		<column name="customer_feedback">
+			<settings>
+				<filter>text</filter>
+				<label translate="true">Feedback</label>
+			</settings>
+		</column>
+		<column name="created_at">
+			<settings>
+				<filter>text</filter>
+				<label translate="true">Created at</label>
+			</settings>
+		</column>
+		<column name="updated_at">
+			<settings>
+				<filter>text</filter>
+				<label translate="true">Updated at</label>
+			</settings>
+		</column>
+		<column name="status">
+			<argument name="data" xsi:type="array">
+				<item name="options" xsi:type="object">Webmeridian\ContactUs\Ui\Component\Listing\Column\StatusOptions</item>
+				<item name="config" xsi:type="array">
+					<item name="filter" xsi:type="string">select</item>
+					<item name="label" xsi:type="string" translate="true">Status</item>
+					<item name="component" xsi:type="string">Magento_Ui/js/grid/columns/select</item>
+					<item name="dataType" xsi:type="string">select</item>
+					<item name="editor" xsi:type="array">
+						<item name="editorType" xsi:type="string">select</item>
+						<item name="validation" xsi:type="array">
+							<item name="required-entry" xsi:type="boolean">false</item>
+						</item>
+					</item>
+				</item>
+			</argument>
+		</column>
+	</columns>
+</listing>

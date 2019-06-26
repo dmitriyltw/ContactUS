@@ -1,0 +1,18 @@
+<?xml version="1.0" ?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+	<menu>
+		<add id="Webmeridian_ContactUs::webmeridian_contactus_customerfeedback_title"
+			 title="Customer Feedback"
+			 module="Webmeridian_ContactUs"
+			 sortOrder="800"
+			 resource="Magento_Backend::content"
+			 parent="Magento_Backend::content" />
+		<add action="webmeridian_contactus/customerfeedback/index"
+			 id="Webmeridian_ContactUs::webmeridian_contactus_customerfeedback"
+			 module="Webmeridian_ContactUs"
+			 parent="Webmeridian_ContactUs::webmeridian_contactus_customerfeedback_title"
+			 resource="Magento_Backend::content"
+			 sortOrder="10"
+			 title="All Feedbacks"/>
+	</menu>
+</config>
